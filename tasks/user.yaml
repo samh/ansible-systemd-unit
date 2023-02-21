@@ -12,6 +12,7 @@
   - name: "Systemd | {{ systemd_user }} | Get home directory"
     ansible.builtin.shell: >
             getent passwd {{ systemd_user }}  | awk -F: '{ print $6 }'
+    check_mode: false
     changed_when: false
     register: user_home
 

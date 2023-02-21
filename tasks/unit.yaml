@@ -46,3 +46,4 @@
     XDG_RUNTIMEDIR: "{{ user_info.uid | default(omit) }}"
   # become_user: "{{ systemd_user }}"
   when: unit_result.changed
+  ignore_errors: "{{ ansible_check_mode }}"
